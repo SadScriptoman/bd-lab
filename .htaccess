@@ -1,0 +1,20 @@
+AddDefaultCharset UTF-8
+
+RewriteEngine on 
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f 
+RewriteRule ^(.*)$ $1.php 
+
+DirectoryIndex index.php
+
+ErrorDocument 409 /409.php
+ErrorDocument 404 /404.php
+ErrorDocument 401 /401.php
+
+<IfModule mod_headers.c>
+        Header append Cache-Control "no-store, no-cache, must-revalidate"
+</IfModule>
+ 
+<IfModule mod_expires.c>
+        ExpiresActive On ExpiresDefault "now"
+</IfModule>
