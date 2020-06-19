@@ -46,10 +46,6 @@
         'EMPLOYEES' => [
             'CLASS' => CLASSES . '/employees/employee.php',
             'HANDLE' => handlers . '/employees/handle-employee',
-            'PATH_TO_PHOTOS' => 'uploads/employees/',
-            'FULL_PATH_TO_PHOTOS' => ROOT . '/uploads/employees/',
-            'IMAGE_W' => 100,
-            'IMAGE_H' => 100
         ],
         'USERS' => [
             'CLASS' => CLASSES . '/users/user.php',

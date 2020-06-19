@@ -1,13 +1,13 @@
 <?php 
-    require_once($_SERVER['DOCUMENT_ROOT'] . "/config/config.php");
-    require_once($_CONFIG['AUTHORIZATION']['IS_LOGGED']);
+    require_once($_SERVER['DOCUMENT_ROOT'] . "/core/config/config.php");
+    require_once($_MODULES['AUTHORIZATION']['IS_LOGGED']);
 
     if ($logged){
         $mysqlUserName      = $_CONFIG['DATABASE']['USERNAME'];
         $mysqlPassword      = $_CONFIG['DATABASE']['PASS'];
         $mysqlHostName      = $_CONFIG['DATABASE']['HOST'];
         $DbName             = $_CONFIG['DATABASE']['NAME'];
-        $backup_name        = "БД/lab.sql";
+        $backup_name        = "lab1.sql";
         
         Export_Database($mysqlHostName,$mysqlUserName,$mysqlPassword,$DbName,  $tables=false, $backup_name );
     }
@@ -86,7 +86,7 @@
             header("Location: ".$ref);
         }
         else{
-            die("Произошла ошибка с экспортом!");
+            die("<br>Произошла ошибка с экспортом!");
         }
     }
 ?>
