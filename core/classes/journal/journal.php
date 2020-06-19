@@ -43,9 +43,6 @@ class Journal extends CRUDEntity{
     }
 
     public static function GetJournal($id){
-        echo 'SELECT '.self::what_to_select.' FROM '.self::table_name.' INNER JOIN '.self::table_posts.'  
-        ON inaguration.idPost = posts.idPost WHERE inaguration.idEmployee = '.$id.' ORDER BY '.self::list_order_by;
-        
         return parent::ExecQuery('SELECT '.self::what_to_select.' FROM '.self::table_name.' INNER JOIN '.self::table_posts.'  
 	    ON inaguration.idPost = posts.idPost WHERE inaguration.idEmployee = '.$id.' ORDER BY '.self::list_order_by);
     }
